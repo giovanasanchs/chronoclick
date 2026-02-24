@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Roboto+Slab:wght@400;700&family=Space+Mono:wght@400;700&display=swap");
+
+/* ===== CSS Variables ===== */
+:root {
+  --background: 235, 46%, 14%;
+  --foreground: 220, 20%, 85%;
+
+  --card: 235, 40%, 18%;
+  --card-foreground: 220, 20%, 85%;
+
+  --primary: 0, 0%, 100%;
+  --primary-foreground: 235, 46%, 14%;
+
+  --secondary: 235, 30%, 25%;
+  --secondary-foreground: 220, 20%, 85%;
+
+  --muted: 235, 30%, 22%;
+  --muted-foreground: 220, 15%, 55%;
+
+  --accent-coral: 0, 78%, 68%;
+  --accent-cyan: 180, 70%, 60%;
+  --accent-purple: 280, 60%, 65%;
+
+  --accent: var(--accent-coral);
+  --accent-foreground: 0, 0%, 100%;
+
+  --border: 235, 25%, 25%;
+
+  --even-digit: 142, 70%, 50%;
+
+  --radius: 1rem;
+
+  --font-body: "Kumbh Sans", sans-serif;
+  --font-mono: "Space Mono", monospace;
+}
+
+/* ===== Light theme ===== */
+.light {
+  --background: 220, 20%, 95%;
+  --foreground: 235, 46%, 14%;
+
+  --card: 0, 0%, 100%;
+  --card-foreground: 235, 46%, 14%;
+
+  --primary: 235, 46%, 14%;
+  --primary-foreground: 0, 0%, 100%;
+
+  --secondary: 220, 15%, 90%;
+  --secondary-foreground: 235, 46%, 14%;
+
+  --muted: 220, 15%, 90%;
+  --muted-foreground: 220, 10%, 40%;
+
+  --border: 220, 15%, 85%;
+}
+
+/* ===== Reset & Base ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition:
+    background-color 0.5s,
+    color 0.5s;
+}
+
+/* ===== Neumorphic Utilities ===== */
+.neumorphic {
+  box-shadow:
+    12px 12px 24px hsl(235, 46%, 8%, 0.6),
+    -8px -8px 20px hsl(235, 35%, 22%, 0.4);
+}
+
+.neumorphic-inset {
+  box-shadow:
+    inset 8px 8px 16px hsl(235, 46%, 8%, 0.6),
+    inset -6px -6px 14px hsl(235, 35%, 22%, 0.4);
+}
+
+.light .neumorphic {
+  box-shadow:
+    8px 8px 20px hsl(220, 20%, 80%, 0.6),
+    -6px -6px 16px hsl(0, 0%, 100%, 0.8);
+}
+
+.light .neumorphic-inset {
+  box-shadow:
+    inset 6px 6px 14px hsl(220, 20%, 80%, 0.5),
+    inset -4px -4px 10px hsl(0, 0%, 100%, 0.6);
+}
+
+/* ===== Glow Effect ===== */
+.glow-ring {
+  box-shadow:
+    0 0 30px hsl(var(--accent) / 0.4),
+    0 0 60px hsl(var(--accent) / 0.15);
+}
+
+/* ===== Animations ===== */
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes fade-in-zoom {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in-zoom 0.2s ease-out;
+}
+
+/* ===== Page Layout ===== */
+.page-wrapper {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(var(--background));
+  transition: background-color 0.5s;
+}
+
+.page-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1.5rem;
+  width: 100%;
+  max-width: 32rem;
+}
+
+.page-title {
+  font-family: var(--font-mono);
+  font-size: 1.125rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 2.5rem;
+}
+
+/* ===== Mode Tabs ===== */
+.mode-tabs {
+  display: flex;
+  background-color: hsl(var(--secondary));
+  border-radius: 9999px;
+  padding: 0.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.mode-tab {
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: transparent;
+  color: hsl(var(--muted-foreground));
+}
+
+.mode-tab:hover {
+  color: hsl(var(--foreground));
+}
+
+.mode-tab.active {
+  background-color: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+}
+
+/* ===== Display Circle ===== */
+.display-circle {
+  width: 16rem;
+  height: 16rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.display-circle-ring {
+  position: absolute;
+  inset: 0.5rem;
+  border-radius: 50%;
+  border: 9px solid hsl(var(--accent));
+  transition:
+    opacity 0.3s,
+    border-color 0.3s;
+}
+
+.display-circle-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.display-status {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: hsl(var(--muted-foreground));
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .display-circle {
+    width: 28rem;
+    height: 28rem;
+  }
+  .display-circle-ring {
+    left: 2rem;
+    top: 2rem;
+    width: 24rem;
+    height: 24rem;
+  }
+}
