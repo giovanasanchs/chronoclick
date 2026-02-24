@@ -1,0 +1,34 @@
+/* ===== CounterDisplay ===== */
+.counter-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter-digits {
+  font-family: var(--font-body);
+  font-size: 4.5rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  user-select: none;
+}
+
+.digit {
+  transition: color 0.3s;
+  color: hsl(var(--foreground));
+}
+
+.digit.even {
+  color: hsl(var(--even-digit));
+}
+
+.digit.separator {
+  color: hsl(var(--muted-foreground));
+  margin: 0 0.25rem;
+}
+
+@media (min-width: 768px) {
+  .counter-digits {
+    font-size: 6rem;
+  }
+}
