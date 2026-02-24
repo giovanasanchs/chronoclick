@@ -6,25 +6,25 @@ O projeto consiste em um contador interativo que pode ser convertido em cronôme
 
 ### 🛠️ Detalhes Técnicos
 
-- Lógica Visual: Os números do contador ficam verdes nos algarismos pares.
-- Modo Cronômetro: Faça o contador se tornar um cronômetro através de mais um botão.
-- Precisão: O cronômetro não precisa contar milissegundos.
-- Controle Inteligente: Não há necessidade de mais um botão para a parada do cronômetro, pode ser o mesmo botão de início do cronômetro.
+- <b>Lógica Visual:</b> Os números do contador ficam verdes nos algarismos pares.
+- <b>Modo Cronômetro:</b> Faça o contador se tornar um cronômetro através de mais um botão.
+- <b>Precisão:</b> O cronômetro não precisa contar milissegundos.
+- <b>Controle Inteligente:</b> Não há necessidade de mais um botão para a parada do cronômetro, pode ser o mesmo botão de início do cronômetro.
 
 ## 🖼️ Preview do Projeto
 
 <p align="center">
-  <img src="./assets/screenshot.png" width="700"/>
+  <img src="./src/assets/screenshot.png" width="700"/>
 </p>
 
 ## 📌 Visão Geral
 
 ChronoClick é uma aplicação simples em conceito, mas estruturada com foco em:
 
-- Separação de responsabilidades: UI separada da lógica de estado.
-- Componentização: Divisão atômica de elementos da interface.
-- Isolamento da lógica de negócio: Uso de Hooks customizados para gerenciamento de tempo.
-- Tipagem forte: Uso integral de TypeScript para evitar erros em tempo de execução.
+- <b>Separação de responsabilidades:</b> UI separada da lógica de estado.
+- <b>Componentização:</b> Divisão atômica de elementos da interface.
+- <b>Isolamento da lógica de negócio:</b> Uso de Hooks customizados para gerenciamento de tempo.
+- <b>Tipagem forte:</b> Uso integral de TypeScript para evitar erros em tempo de execução.
 
 ## 🚀 Tecnologias Utilizadas
 
@@ -82,7 +82,7 @@ src/
       └── theme.ts                 # Variáveis de cores e tokens
  ```
 
-Nota: A lógica foi isolada no hook useCounter.tsx, garantindo que os componentes de UI (CounterDisplay, etc.) se preocupem apenas com a renderização, facilitando testes unitários e reutilização de código.
+<b>Nota:</b> A lógica foi isolada no hook useCounter.tsx, garantindo que os componentes de UI (CounterDisplay, etc.) se preocupem apenas com a renderização, facilitando testes unitários e reutilização de código.
 
 
 ## ▶️ Como Executar o Projeto
