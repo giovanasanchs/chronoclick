@@ -1,0 +1,213 @@
+/* ===== Settings Toggle Button ===== */
+.settings-toggle-btn {
+  background: none;
+  border: none;
+  color: hsl(var(--muted-foreground));
+  cursor: pointer;
+  transition: color 0.2s;
+  margin-top: 2.5rem;
+}
+
+.settings-toggle-btn:hover {
+  color: hsl(var(--foreground));
+}
+
+/* ===== Modal Overlay ===== */
+.settings-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: overlay-fade-in 0.2s ease-out;
+}
+
+@keyframes overlay-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ===== Modal Panel ===== */
+.settings-panel {
+  background-color: hsl(var(--card));
+  border-radius: 1.25rem;
+  padding: 2rem 2.5rem;
+  width: 22rem;
+  max-width: 90vw;
+  position: relative;
+  animation: panel-slide-in 0.25s ease-out;
+}
+
+@keyframes panel-slide-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ===== Header ===== */
+.settings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.75rem;
+}
+
+.settings-title {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+  margin: 0;
+}
+
+.settings-close-btn {
+  background: none;
+  border: none;
+  color: hsl(var(--muted-foreground));
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings-close-btn:hover {
+  color: hsl(var(--foreground));
+}
+
+/* ===== Section Labels ===== */
+.settings-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 0.75rem;
+}
+
+/* ===== Font Options ===== */
+.settings-section {
+  margin-bottom: 1.5rem;
+}
+
+.font-options {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.font-btn {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 700;
+  transition: all 0.2s;
+  background-color: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+}
+
+.font-btn:hover {
+  background-color: hsl(var(--muted));
+}
+
+.font-btn.active {
+  background-color: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+}
+
+/* ===== Color Options ===== */
+.color-options {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.color-swatch {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+}
+
+.color-swatch:hover {
+  opacity: 1;
+}
+
+.color-swatch.selected {
+  border-color: hsl(var(--foreground));
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.color-swatch-check {
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* ===== Theme Options ===== */
+.theme-options {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.theme-btn {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  transition: all 0.2s;
+  background-color: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+}
+
+.theme-btn:hover {
+  background-color: hsl(var(--muted));
+}
+
+.theme-btn.active {
+  background-color: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+}
+
+/* ===== Apply Button ===== */
+.settings-apply-btn {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 700;
+  background-color: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+  transition: opacity 0.2s;
+  margin-top: 0.5rem;
+}
+
+.settings-apply-btn:hover {
+  opacity: 0.9;
+}
