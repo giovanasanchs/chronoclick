@@ -1,6 +1,6 @@
 import React from "react";
 import { Settings, X, Sun, Moon } from "lucide-react";
-import type { AccentColor, ThemeMode } from "@/types/counter.types";
+import type { AccentColor, ThemeMode } from "../../types/counter.types";
 import "./SettingsPanel.css";
 
 interface SettingsPanelProps {

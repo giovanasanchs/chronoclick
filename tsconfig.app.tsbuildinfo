@@ -1,0 +1,1 @@
+{"root":["./src/main.tsx","./src/app/app.tsx","./src/components/counter/counter.tsx","./src/components/counter/countercontrols.tsx","./src/components/counter/counterdisplay.tsx","./src/components/settings/settingspanel.tsx","./src/hooks/usecounter.tsx","./src/pages/notfound.tsx","./src/root/root.tsx","./src/styles/theme.ts","./src/types/counter.types.ts"],"version":"5.9.3"}

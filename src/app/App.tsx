@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { useCounter } from '@/hooks/useCounter';
-import { Counter } from '@/components/Counter/Counter';
-import { SettingsPanel } from '@/components/Settings/SettingsPanel';
-import type { AccentColor, ThemeMode } from '@/types/counter.types';
+import { useCounter } from '../hooks/useCounter';
+import { Counter } from '../components/Counter/Counter';
+import { SettingsPanel } from '../components/Settings/SettingsPanel';
+import type { AccentColor, ThemeMode } from '../types/counter.types';
 
 const App = () => {
   const { count, isTimerRunning, increment, reset, toggleTimer } = useCounter();
