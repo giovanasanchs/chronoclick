@@ -1,5 +1,5 @@
 import { createRoot } from "react-dom/client";
-import Root from "./root/Root.tsx";
+import Router from "./routes/Router.tsx";
 import "./styles/global.css";
 
-createRoot(document.getElementById("root")!).render(<Root />);
+createRoot(document.getElementById("root")!).render(<Router />);
