@@ -1,6 +1,6 @@
-import React from 'react';
-import { CounterDisplay } from './CounterDisplay';
-import { CounterControls } from './CounterControls';
+import React from "react";
+import { CounterDisplay } from "./CounterDisplay";
+import { CounterControls } from "./CounterControls";
 
 interface CounterProps {
   count: number;
@@ -8,6 +8,7 @@ interface CounterProps {
   onIncrement: () => void;
   onToggleTimer: () => void;
   onReset: () => void;
+  mode: "counter" | "timer";
 }
 
 export const Counter: React.FC<CounterProps> = ({
@@ -16,6 +17,7 @@ export const Counter: React.FC<CounterProps> = ({
   onIncrement,
   onToggleTimer,
   onReset,
+  mode,
 }) => {
   return (
     <>
@@ -27,7 +29,7 @@ export const Counter: React.FC<CounterProps> = ({
         <div className="display-circle-content">
           <CounterDisplay count={count} isTimerRunning={isTimerRunning} />
           <span className="display-status">
-            {isTimerRunning ? 'rodando' : 'pausado'}
+            {isTimerRunning ? "rodando" : "pausado"}
           </span>
         </div>
       </div>
@@ -37,6 +39,7 @@ export const Counter: React.FC<CounterProps> = ({
         onIncrement={onIncrement}
         onToggleTimer={onToggleTimer}
         onReset={onReset}
+        mode={mode}
       />
     </>
   );
