@@ -1,44 +1,37 @@
-import { useState, useRef, useCallback, useEffect } from 'react';
+import { useState, useRef, useCallback, useEffect } from "react";
 
 export function useCounter() {
-  const [count, setCount] = useState(() => {
-    const saved = localStorage.getItem('chronoclick-count');
-    return saved ? Number(saved) : 0;
-  });
+  const [count, setCount] = useState(
+    () => Number(localStorage.getItem("chronoclick-count")) || 0,
+  );
   const [isTimerRunning, setIsTimerRunning] = useState(false);
-
-  useEffect(() => {
-    localStorage.setItem('chronoclick-count', String(count));
-  }, [count]);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  const increment = useCallback(() => {
-    setCount((prev) => prev + 1);
-  }, []);
+  const increment = useCallback(() => setCount((p) => p + 1), []);
 
   const reset = useCallback(() => {
     setCount(0);
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-      intervalRef.current = null;
-    }
+    if (intervalRef.current) clearInterval(intervalRef.current);
     setIsTimerRunning(false);
+    localStorage.setItem("chronoclick-count", "0");
   }, []);
 
   const toggleTimer = useCallback(() => {
     if (isTimerRunning) {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-        intervalRef.current = null;
-      }
+      if (intervalRef.current) clearInterval(intervalRef.current);
       setIsTimerRunning(false);
+      localStorage.setItem("chronoclick-count", String(count));
     } else {
-      intervalRef.current = setInterval(() => {
-        setCount((prev) => prev + 1);
-      }, 1000);
       setIsTimerRunning(true);
+      intervalRef.current = setInterval(() => setCount((p) => p + 1), 1000);
     }
-  }, [isTimerRunning]);
+  }, [isTimerRunning, count]);
+
+  useEffect(() => {
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, []);
 
   return { count, isTimerRunning, increment, reset, toggleTimer };
 }
