@@ -117,7 +117,7 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({
             </div>
 
             <button className="settings-apply-btn" onClick={handleApply}>
-              Apply
+              Aplicar
             </button>
           </div>
         </div>
