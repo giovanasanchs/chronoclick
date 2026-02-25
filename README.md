@@ -55,8 +55,7 @@ src/
  ├── assets/        → Recursos estáticos (imagens, ícones)
  ├── components/    → Componentes modulares (Counter, Settings)
  ├── hooks/         → Hooks customizados (Lógica de estado e timers)
- ├── pages/         → Estruturas de página (ex: NotFound)
- ├── root/          → Componente de roteamento ou provedor base
+ ├── routes/        → Componente de roteamento ou provedor base
  ├── styles/        → Definições de tema e CSS global
  ├── types/         → Definições de tipos TypeScript (.d.ts)
  └── main.tsx       → Renderização inicial do React
