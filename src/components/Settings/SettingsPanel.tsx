@@ -63,7 +63,6 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({
               </button>
             </div>
 
-            {/* Font */}
             <div className="settings-section">
               <p className="settings-label">Fonte</p>
               <div className="font-options">
@@ -80,7 +79,6 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({
               </div>
             </div>
 
-            {/* Color */}
             <div className="settings-section">
               <p className="settings-label">Cor</p>
               <div className="color-options">
@@ -100,7 +98,6 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({
               </div>
             </div>
 
-            {/* Theme */}
             <div className="settings-section">
               <p className="settings-label">Tema</p>
               <div className="theme-options">

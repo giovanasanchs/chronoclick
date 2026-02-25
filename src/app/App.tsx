@@ -48,7 +48,6 @@ const App = () => {
       <main className="page-main">
         <h1 className="page-title">chronoclick</h1>
 
-        {/* Mode tabs */}
         <div className="mode-tabs">
           <button
             onClick={() => { if (isTimerRunning) toggleTimer(); reset(); }}

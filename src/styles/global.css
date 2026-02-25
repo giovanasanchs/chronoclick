@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Roboto+Slab:wght@400;700&family=Space+Mono:wght@400;700&display=swap");
 
-/* ===== CSS Variables ===== */
 :root {
   --background: 235, 46%, 14%;
   --foreground: 220, 20%, 85%;
@@ -34,7 +33,6 @@
   --font-mono: "Space Mono", monospace;
 }
 
-/* ===== Light theme ===== */
 .light {
   --background: 220, 20%, 95%;
   --foreground: 235, 46%, 14%;
@@ -54,7 +52,6 @@
   --border: 220, 15%, 85%;
 }
 
-/* ===== Reset & Base ===== */
 *,
 *::before,
 *::after {
@@ -74,7 +71,6 @@ body {
     color 0.5s;
 }
 
-/* ===== Neumorphic Utilities ===== */
 .neumorphic {
   box-shadow:
     12px 12px 24px hsl(235, 46%, 8%, 0.6),
@@ -99,14 +95,12 @@ body {
     inset -4px -4px 10px hsl(0, 0%, 100%, 0.6);
 }
 
-/* ===== Glow Effect ===== */
 .glow-ring {
   box-shadow:
     0 0 30px hsl(var(--accent) / 0.4),
     0 0 60px hsl(var(--accent) / 0.15);
 }
 
-/* ===== Animations ===== */
 @keyframes pulse-glow {
   0%,
   100% {
@@ -136,7 +130,6 @@ body {
   animation: fade-in-zoom 0.2s ease-out;
 }
 
-/* ===== Page Layout ===== */
 .page-wrapper {
   display: flex;
   min-height: 100vh;
@@ -164,7 +157,6 @@ body {
   margin-bottom: 2.5rem;
 }
 
-/* ===== Mode Tabs ===== */
 .mode-tabs {
   display: flex;
   background-color: hsl(var(--secondary));
@@ -194,7 +186,6 @@ body {
   color: hsl(var(--accent-foreground));
 }
 
-/* ===== Display Circle ===== */
 .display-circle {
   width: 16rem;
   height: 16rem;

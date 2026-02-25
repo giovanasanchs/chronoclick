@@ -19,7 +19,6 @@ export const Counter: React.FC<CounterProps> = ({
 }) => {
   return (
     <>
-      {/* Display circle */}
       <div className="display-circle neumorphic-inset">
         <div
           className="display-circle-ring glow-ring animate-pulse-glow"
