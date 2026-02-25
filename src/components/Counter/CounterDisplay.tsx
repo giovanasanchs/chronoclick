@@ -17,7 +17,7 @@ function formatTime(seconds: number): string {
   return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
 }
 
-export const CounterDisplay: React.FC<CounterDisplayProps> = ({ count, isTimerRunning }) => {
+export const CounterDisplay = React.memo(({ count, isTimerRunning }: CounterDisplayProps) => {
   const displayValue = isTimerRunning ? formatTime(count) : String(count);
 
   return (
@@ -36,4 +36,4 @@ export const CounterDisplay: React.FC<CounterDisplayProps> = ({ count, isTimerRu
       </div>
     </div>
   );
-};
+});
