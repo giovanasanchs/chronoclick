@@ -2,15 +2,15 @@ import { useState, useEffect } from "react";
 import { useCounter } from "../hooks/useCounter";
 import { Counter } from "../components/Counter/Counter";
 import { SettingsPanel } from "../components/Settings/SettingsPanel";
-import type { AccentColor, ThemeMode } from "../types/counter.types";
+import { LOCAL_STORAGE_KEYS } from "../constants";
+import { LocalStorageService } from "../services/LocalStorageService";
+import type { AccentColor, ThemeMode, Mode } from "../types/counter.types";
 
 const App = () => {
   const { count, isTimerRunning, increment, reset, toggleTimer } = useCounter();
   const [settingsOpen, setSettingsOpen] = useState(false);
-  const [mode, setMode] = useState<"counter" | "timer">(
-    () =>
-      (localStorage.getItem("chronoclick-mode") as "counter" | "timer") ||
-      "counter",
+  const [mode, setMode] = useState<Mode>(() =>
+    LocalStorageService.getItem(LOCAL_STORAGE_KEYS.MODE, "counter" as Mode),
   );
 
   const handleToggleTimer = () => {
@@ -20,15 +20,17 @@ const App = () => {
     toggleTimer();
   };
 
-  const [accentColor, setAccentColor] = useState<AccentColor>(
-    () =>
-      (localStorage.getItem("chronoclick-accent") as AccentColor) || "coral",
+  const [accentColor, setAccentColor] = useState<AccentColor>(() =>
+    LocalStorageService.getItem(
+      LOCAL_STORAGE_KEYS.ACCENT,
+      "coral" as AccentColor,
+    ),
   );
-  const [themeMode, setThemeMode] = useState<ThemeMode>(
-    () => (localStorage.getItem("chronoclick-theme") as ThemeMode) || "dark",
+  const [themeMode, setThemeMode] = useState<ThemeMode>(() =>
+    LocalStorageService.getItem(LOCAL_STORAGE_KEYS.THEME, "dark" as ThemeMode),
   );
-  const [selectedFont, setSelectedFont] = useState(
-    () => localStorage.getItem("chronoclick-font") || "kumbh",
+  const [selectedFont, setSelectedFont] = useState(() =>
+    LocalStorageService.getItem(LOCAL_STORAGE_KEYS.FONT, "kumbh"),
   );
 
   useEffect(() => {
@@ -48,10 +50,10 @@ const App = () => {
   }, [accentColor, themeMode, selectedFont]);
 
   useEffect(() => {
-    localStorage.setItem("chronoclick-mode", mode);
-    localStorage.setItem("chronoclick-accent", accentColor);
-    localStorage.setItem("chronoclick-theme", themeMode);
-    localStorage.setItem("chronoclick-font", selectedFont);
+    localStorage.setItem(LOCAL_STORAGE_KEYS.MODE, mode);
+    localStorage.setItem(LOCAL_STORAGE_KEYS.ACCENT, accentColor);
+    localStorage.setItem(LOCAL_STORAGE_KEYS.THEME, themeMode);
+    localStorage.setItem(LOCAL_STORAGE_KEYS.FONT, selectedFont);
   }, [mode, accentColor, themeMode, selectedFont]);
 
   return (
