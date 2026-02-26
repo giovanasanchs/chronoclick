@@ -31,3 +31,9 @@
     font-size: 6rem;
   }
 }
+
+@media (max-width: 767px) {
+  .counter-digits {
+    font-size: 3rem;
+  }
+}

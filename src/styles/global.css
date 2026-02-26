@@ -233,3 +233,13 @@ body {
     height: 24rem;
   }
 }
+
+@media (max-width: 767px) {
+  .display-circle {
+    width: 18rem;
+    height: 18rem;
+  }
+  .display-circle-ring {
+    inset: 1rem;
+  }
+}
