@@ -27,7 +27,11 @@ export const Counter: React.FC<CounterProps> = ({
           style={{ opacity: isTimerRunning ? 1 : 0.5 }}
         />
         <div className="display-circle-content">
-          <CounterDisplay count={count} isTimerRunning={isTimerRunning} />
+          <CounterDisplay
+            count={count}
+            isTimerRunning={isTimerRunning}
+            mode={mode}
+          />
           <span className="display-status">
             {isTimerRunning ? "rodando" : "pausado"}
           </span>

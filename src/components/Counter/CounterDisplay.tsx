@@ -4,6 +4,7 @@ import "./CounterDisplay.css";
 interface CounterDisplayProps {
   count: number;
   isTimerRunning: boolean;
+  mode: "counter" | "timer";
 }
 
 function isEvenNumber(count: number): boolean {
@@ -17,8 +18,8 @@ function formatTime(seconds: number): string {
 }
 
 export const CounterDisplay = React.memo(
-  ({ count, isTimerRunning }: CounterDisplayProps) => {
-    const displayValue = isTimerRunning ? formatTime(count) : String(count);
+  ({ count, isTimerRunning, mode }: CounterDisplayProps) => {
+    const displayValue = mode === "timer" ? formatTime(count) : String(count);
     const isEven = isEvenNumber(count);
 
     const mins = Math.floor(count / 60);
